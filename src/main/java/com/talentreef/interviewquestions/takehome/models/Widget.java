@@ -7,12 +7,12 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import javax.validation.Valid;
 import javax.validation.constraints.DecimalMax;
 import javax.validation.constraints.DecimalMin;
 import javax.validation.constraints.Digits;
+import javax.validation.constraints.Size;
 
 @Data
 @Table
@@ -23,15 +23,17 @@ import javax.validation.constraints.Digits;
 @Builder(toBuilder = true)
 public class Widget {
 
+    // Widget class attributes
+    @Valid
     @Id
-    private String id;
-
     @Size(min = 3, max = 100, message ="Name must be between 3 and 100 characters")
     private String name;
 
+    @Valid
     @Size(min = 5, max = 1000, message ="Description must be between 5 and 1000 characters")
     private String description;
 
+    @Valid
     @DecimalMin("1.00")
     @DecimalMax("20000.00")
     @Digits(integer = 5, fraction = 2)
