@@ -11,6 +11,7 @@ import org.springframework.util.Assert;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 @Slf4j
@@ -89,16 +90,19 @@ public class WidgetController {
     // PUT http://localhost:9000/v1/widgets/{name}/description
     // Raw body: A new description
     @PutMapping("/{name}/description")
-    public ResponseEntity<Widget> updateWidgetDescription(@PathVariable String name, @RequestBody String newDescription) {
-        Widget widget =  widgetService.updateWidgetDescription(name, newDescription);
+    public ResponseEntity<Widget> updateWidgetDescription(@PathVariable String name, @RequestBody Map<String, String> requestBody) {
+        String newDescription = requestBody.get("newDescription");
+        Widget widget = widgetService.updateWidgetDescription(name, newDescription);
         return ResponseEntity.ok(widget);
     }
 
     // PUT http://localhost:9000/v1/widgets/{name}/price
     // Raw body: A new price
     @PutMapping("/{name}/price")
-    public ResponseEntity<Widget> updateWidgetPrice(@PathVariable String name, @RequestBody Double newPrice) {
-        Widget widget =  widgetService.updateWidgetPrice(name, newPrice);
+
+    public ResponseEntity<Widget> updateWidgetPrice(@PathVariable String name, @RequestBody Map<String, Double> requestBody) {
+        Double newPrice = requestBody.get("newPrice");
+        Widget widget = widgetService.updateWidgetPrice(name, newPrice);
         return ResponseEntity.ok(widget);
     }
 

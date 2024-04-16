@@ -1,6 +1,7 @@
 package com.talentreef.interviewquestions.takehome.respositories;
 
 import com.talentreef.interviewquestions.takehome.models.Widget;
+import jakarta.validation.Valid;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -45,7 +46,7 @@ public class WidgetRepository {
     }
 
     // Create Widget - Automatically add to list
-    public Widget create(String aName, String aDescription, double aPrice) {
+    public Widget create(@Valid String aName, @Valid String aDescription, @Valid double aPrice) {
         Widget widget = Widget.builder()
                 .name(aName)
                 .description(aDescription)

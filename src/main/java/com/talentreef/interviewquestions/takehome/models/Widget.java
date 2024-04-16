@@ -26,16 +26,16 @@ public class Widget {
     // Widget class attributes
     @Valid
     @Id
-    @Size(min = 3, max = 100, message ="Name must be between 3 and 100 characters")
+    @Size(min = 3, max = 100, message = "Name must be between 3 and 100 characters")
     private String name;
 
     @Valid
-    @Size(min = 5, max = 1000, message ="Description must be between 5 and 1000 characters")
+    @Size(min = 5, max = 1000, message = "Description must be between 5 and 1000 characters")
     private String description;
 
     @Valid
-    @DecimalMin("1.00")
-    @DecimalMax("20000.00")
+    @DecimalMin(value = "1.00", message = "Price must be bigger than 1.00 and smaller than 20000.00")
+    @DecimalMax(value = "20000.00", message = "Price must be bigger than 1.00 and smaller than 20000.00")
     @Digits(integer = 5, fraction = 2)
     private double price;
 
