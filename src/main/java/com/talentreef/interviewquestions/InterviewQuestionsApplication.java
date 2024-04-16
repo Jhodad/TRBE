@@ -1,21 +1,21 @@
 package com.talentreef.interviewquestions;
 
-
 import com.talentreef.interviewquestions.takehome.respositories.WidgetRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 @SpringBootApplication
 @ComponentScan(basePackages = "com.talentreef")
 @EntityScan(basePackages = "com.talentreef")
+@EnableWebMvc
 
 public class InterviewQuestionsApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(InterviewQuestionsApplication.class, args);
-
 
         System.out.println("================== START OF TESTS  ==================");
         WidgetRepository widgetRepository = new WidgetRepository();
