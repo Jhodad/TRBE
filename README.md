@@ -2,7 +2,7 @@
 
 ## Description
 
-This [Spring Boot](https://spring.io/projects/spring-boot) project has been modified from the original template to fulfill the conditions requested in the challenge's document. The code can be executed in the same manner as the original template and the HTTP requests can be easily tested with tools such as [Postman] (https://www.postman.com/) - Examples are provided 
+This [Spring Boot](https://spring.io/projects/spring-boot) project has been modified from the original template to fulfill the conditions requested in the challenge's document. The code can be executed in the same manner as the original template and the HTTP requests can be easily tested with tools such as [Postman](https://www.postman.com) - Examples are provided 
 
 ## Requirements
 
@@ -61,8 +61,7 @@ GET http://localhost:9000/v1/widgets
 GET http://localhost:9000/v1/widgets/Clock
 ``` 
 
-### 4) Obtain only the description or price of a Widget given 
-it's description or price
+### 4) Obtain only the description or price of a Widget given it's description or price
 ``` 
 GET http://localhost:9000/v1/widgets/Clock/description
 GET http://localhost:9000/v1/widgets/Clock/price
