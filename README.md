@@ -26,7 +26,8 @@ Execute tests using Gradle:
 
 ## Testing with Postman
 
-#1) An initial POST should be made to fill the system
+# 1) An initial POST should be made to fill the system
+``` 
 POST http://localhost:9000/v1/widgets
 
 Raw JSON data:
@@ -47,21 +48,28 @@ Raw JSON data:
         "price": 35.21
     }
 ]
+``` 
 
-#2) A simple get to verify the data
+# 2) A simple get to verify the data
+``` 
 GET http://localhost:9000/v1/widgets
+``` 
 
-#3) Obtain the info of a Widget given it's name
+``` 
+# 3) Obtain the info of a Widget given it's name
 GET http://localhost:9000/v1/widgets/Clock
+``` 
 
-#4) Obtain only the description or price of a Widget given it's description or price
+``` 
+# 4) Obtain only the description or price of a Widget given it's description or price
 GET http://localhost:9000/v1/widgets/Clock/description
 GET http://localhost:9000/v1/widgets/Clock/price
+``` 
 
-#5) Delete a Widget given it's name
+# 5) Delete a Widget given it's name
 DELETE http://localhost:9000/v1/widgets/Clock
 
-#6) Update a Widget's description given it's name and a new Description
+# 6) Update a Widget's description given it's name and a new Description
 PUT http://localhost:9000/v1/widgets/Weather/description
 
 Raw JSON data:
