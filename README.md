@@ -4,7 +4,7 @@
 
 This [Spring Boot](https://spring.io/projects/spring-boot) project has been modified from the original template to fulfill the conditions requested in the challenge's document. The code can be executed in the same manner as the original template and the HTTP requests can be easily tested with tools such as [Postman](https://www.postman.com) - Examples are provided 
 
-The Front End can be located [here](https://github.com/Jhodad/TRFE) 
+The Front End can be found [here](https://github.com/Jhodad/TRFE) 
 
 ## Requirements
 
