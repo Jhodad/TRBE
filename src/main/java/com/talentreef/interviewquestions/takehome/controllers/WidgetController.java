@@ -2,6 +2,7 @@ package com.talentreef.interviewquestions.takehome.controllers;
 
 import com.talentreef.interviewquestions.takehome.models.Widget;
 import com.talentreef.interviewquestions.takehome.services.WidgetService;
+import jakarta.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
@@ -45,7 +46,7 @@ public class WidgetController {
 
     // POST http://localhost:9000/v1/widgets
     @PostMapping
-    public ResponseEntity<List<Widget>> createWidgets(@RequestBody List<Widget> widgets) {
+    public ResponseEntity<List<Widget>> createWidgets(@Valid @RequestBody List<Widget> widgets) {
         widgetService.createWidgets(widgets);
         return ResponseEntity.ok(widgets);
     }
