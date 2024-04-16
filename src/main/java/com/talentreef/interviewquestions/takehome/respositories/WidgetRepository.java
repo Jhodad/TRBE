@@ -16,20 +16,12 @@ public class WidgetRepository {
 
     // DELETE widget by ID
     public List<Widget> deleteById(String name) {
-        List<Widget> updatedTable = table.stream()
-                .filter((Widget widget) -> !name.equals(widget.getName()))
-                .collect(Collectors.toCollection(ArrayList::new));
-        table = updatedTable;
-        return table;
-    }
-    /*
-    public List<Widget> deleteById(String name) {
-            this.table = table.stream()
+        this.table = table.stream()
                 .filter((Widget widget) -> !name.equals(widget.getName()))
                 .collect(Collectors.toCollection(ArrayList::new));
         return table;
     }
-    */
+    // We could add another delete widget by id that returns T/F
 
     // List of all widgets
     public List<Widget> findAll() {
@@ -45,6 +37,7 @@ public class WidgetRepository {
     }
 
     // Save widget to table List, avoids duplicates by deleting through same name
+    // can work as an Update by using the same ID, it will replace desc and price with the new values
     public Widget save(Widget widget) {
         deleteById(widget.getName());
         table.add(widget);
@@ -94,10 +87,6 @@ public class WidgetRepository {
         if (optionalWidget.isPresent()) {
             Widget widget = optionalWidget.get();
             widget.setDescription(aDescription);
-            table = table.stream()
-                    .filter(w -> !w.getName().equals(aName))
-                    .collect(Collectors.toList());
-            table.add(widget);
             return widget;
         } else {
             return null;
@@ -110,10 +99,6 @@ public class WidgetRepository {
         if (optionalWidget.isPresent()) {
             Widget widget = optionalWidget.get();
             widget.setPrice(aPrice);
-            table = table.stream()
-                    .filter(w -> !w.getName().equals(aName))
-                    .collect(Collectors.toList());
-            table.add(widget);
             return widget;
         } else {
             return null;
